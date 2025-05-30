@@ -264,7 +264,7 @@ with st.container(border=True):
     with btt2:
         st.button("Ricarica allerte meteo", "reloadalerts", None, download_alerts, disabled=not st.session_state.city)
 
-st.markdown(f"---\n{"" if st.session_state.city else 'Seleziona una città per avere grafici e allerte'} ")
+st.markdown(f"---\n{'' if st.session_state.city else 'Seleziona una città per avere grafici e allerte'}")
 
 
 
