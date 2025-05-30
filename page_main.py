@@ -347,11 +347,9 @@ with extendcharts:
     if st.session_state.selectedProduct:
         axislist = st.session_state.chartapi.get_axis_list(st.session_state.selectedProduct["name"])
         axisnames = [axis[0] for axis in axislist]
-        #print(axisnames)
         titleconversion = {axis[0]: axis[1] for axis in axislist}
         remainingaxis = axisnames.copy()
         values = {}
-        print(axisnames)
         if "area" in axisnames or "projection" in axisnames:
             availableareas = st.session_state.chartapi.get_available_area(st.session_state.selectedProduct["name"])
             selectedarea = st.selectbox("Area proiezione", [(area["label"], area["value"]) for area in availableareas],
@@ -363,7 +361,7 @@ with extendcharts:
             elif "projection" in axisnames:
                 remainingaxis.remove("projection")
                 values["projection"] = selectedarea[1]
-            else:print("ERRORE ", axisnames)
+            else:print("ERRORE ")
 
         if "base_time" in axisnames:
             availablebasetimes = st.session_state.chartapi.get_available_base_times(st.session_state.selectedProduct["name"])
@@ -398,13 +396,10 @@ with extendcharts:
                 #st.markdown(values[axis])
 
         canrequest = False
-        #print((list(values.keys()).remove("valid_time") if "valid_time" in list(values.keys()) else list(values.keys())), axisnames)
         keys = list(values.keys())
         if "valid_time" in keys:
             keys.remove("valid_time")
 
-        #set((list(values.keys()).remove("valid_time") if "valid_time" in list(values.keys()) else list(values.keys())))
-        print(set(keys), set(axisnames))
         axischeck = axisnames.copy()
         if "location" in axischeck:
             axischeck.remove("location")

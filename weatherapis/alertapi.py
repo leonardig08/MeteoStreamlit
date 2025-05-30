@@ -51,7 +51,7 @@ class AlertAPI:
         urlformat = self.url + "alerts/?" + urlencode({"lat": lat, "lon": lon, "key": self.key})
         response = requests.get(urlformat)
         jsonresponse = response.json()
-
+        print(jsonresponse)
         alerts = jsonresponse["alerts"]
         for alert in alerts:
             alert["description"] = separa_testi_per_lingua(alert["description"])
