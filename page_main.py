@@ -329,12 +329,14 @@ if st.session_state.hourly is not None and st.session_state.daily is not None an
 if st.session_state.city is not None:
     alertextend = st.expander("Allerte Meteo")
     with alertextend:
-
-        st.session_state.alerts = st.session_state.alertapi.get_alerts(st.session_state.city[1], st.session_state.city[0])
-        st.session_state.weatheralertlanguage = st.selectbox("Lingua allerte", st.session_state.alerts["alerts"][0]["description"].keys())
-        #st.markdown(st.session_state.alerts)
-        for alert in st.session_state.alerts["alerts"]:
-            st_weather_alert(alert)
+        try:
+            st.session_state.alerts = st.session_state.alertapi.get_alerts(st.session_state.city[1], st.session_state.city[0])
+            st.session_state.weatheralertlanguage = st.selectbox("Lingua allerte", st.session_state.alerts["alerts"][0]["description"].keys())
+            #st.markdown(st.session_state.alerts)
+            for alert in st.session_state.alerts["alerts"]:
+                st_weather_alert(alert)
+        except KeyError:
+            st.markdown("Allerte non disponibili, riprova più tardi")
 
 extendcharts = st.expander("Chart meteo")
 
