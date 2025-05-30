@@ -1,0 +1,148 @@
+{
+    "alerts": [
+        {
+            "description": {
+                "en": "Heavy Rain/showers - at least 10 mm (l/m\u00b2)  within a 3-hour period Difficulties in urban areas (especially problem in capacity of rain sewerage system, sewer collectors), problems in transport, disabling the planned agricultural works. Possible violations of the people and damage of properties.",
+                "sr": "Pljusak ki\u0161e ili jaka ki\u0161a sa koli\u010dinom padavina \u2265 10 l/m\u00b2 u periodu do 3h Pote\u0161ko\u0107e u urbanim sredinama (posebno problemi sa ki\u0161nom kanalizacijom i ki\u0161nim kolektorima), problemi u saobra\u0107aju i transportu, odlaganje ve\u0107 planiranih poljoprivrednih aktivnosti. Mogu\u0107a je \u0161teta na pokretnoj i nepokretnoj imovini i povre\u0111ivanje ljudi i \u017eivotinja."
+            },
+            "effective_local": "2025-05-06T02:00:00",
+            "effective_utc": "2025-05-06T00:00:00",
+            "ends_local": "2025-05-07T01:59:00",
+            "ends_utc": "2025-05-06T23:59:00",
+            "expires_local": "2025-05-07T01:59:00",
+            "expires_utc": "2025-05-06T23:59:00",
+            "onset_local": "2025-05-06T02:00:00",
+            "onset_utc": "2025-05-06T00:00:00",
+            "regions": [
+                "\u0408\u0443\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430,RS"
+            ],
+            "severity": {
+                "en": "\ud83d\udfe8 Yellow",
+                "sr": "\ud83d\udfe8 Yellow"
+            },
+            "title": "Rain",
+            "uri": "https://meteoalarm.org?geocode=EMMA_ID:RS006"
+        },
+        {
+            "description": {
+                "en": "Local thunderstorms The risk of thunder stroke, endangered lives of people and animals, operation problems for all electrical devices, the risk of fire initiation, telecommunication problems. Possible problems in the transport of electricity. Possible occurrence of local intensive showers, torrents and strong gust. These phenomena could cause damage to the property and be dangerous to the security of people and animals.",
+                "sr": "Lokalna pojava grmljavina sa ili bez padavina Rizik od udara groma, opasnost za \u017eivot ljudi i \u017eivotinja, problemi u radu svih ure\u0111aja koji koriste elektri\u010dnu energiju, rizik od iniciranja pojave vatre, problemi u telekomunikacijama. Mogu\u0107i problemi u transportu elektri\u010dne energije zbog udara groma. Mogu\u0107a je lokalna pojava intezivnih pljuskova, bujica i jakih udara vetra sa \u0161tetama na pokretnoj i nepokretnoj imovini."
+            },
+            "effective_local": "2025-05-06T02:00:00",
+            "effective_utc": "2025-05-06T00:00:00",
+            "ends_local": "2025-05-07T01:59:00",
+            "ends_utc": "2025-05-06T23:59:00",
+            "expires_local": "2025-05-07T01:59:00",
+            "expires_utc": "2025-05-06T23:59:00",
+            "onset_local": "2025-05-06T02:00:00",
+            "onset_utc": "2025-05-06T00:00:00",
+            "regions": [
+                "\u0408\u0443\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430,RS"
+            ],
+            "severity": {
+                "en": "\ud83d\udfe8 Yellow",
+                "sr": "\ud83d\udfe8 Yellow"
+            },
+            "title": "Thunderstorms",
+            "uri": "https://meteoalarm.org?geocode=EMMA_ID:RS006"
+        },
+        {
+            "description": {
+                "en": "Heavy Rain/showers - at least 10 mm (l/m\u00b2)  within a 3-hour period Difficulties in urban areas (especially problem in capacity of rain sewerage system, sewer collectors), problems in transport, disabling the planned agricultural works. Possible violations of the people and damage of properties.",
+                "sr": "Pljusak ki\u0161e ili jaka ki\u0161a sa koli\u010dinom padavina \u2265 10 l/m\u00b2 u periodu do 3h Pote\u0161ko\u0107e u urbanim sredinama (posebno problemi sa ki\u0161nom kanalizacijom i ki\u0161nim kolektorima), problemi u saobra\u0107aju i transportu, odlaganje ve\u0107 planiranih poljoprivrednih aktivnosti. Mogu\u0107a je \u0161teta na pokretnoj i nepokretnoj imovini i povre\u0111ivanje ljudi i \u017eivotinja."
+            },
+            "effective_local": "2025-05-07T02:00:00",
+            "effective_utc": "2025-05-07T00:00:00",
+            "ends_local": "2025-05-08T01:59:00",
+            "ends_utc": "2025-05-07T23:59:00",
+            "expires_local": "2025-05-08T01:59:00",
+            "expires_utc": "2025-05-07T23:59:00",
+            "onset_local": "2025-05-07T02:00:00",
+            "onset_utc": "2025-05-07T00:00:00",
+            "regions": [
+                "\u0408\u0443\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430,RS"
+            ],
+            "severity": {
+                "en": "\ud83d\udfe8 Yellow",
+                "sr": "\ud83d\udfe8 Yellow"
+            },
+            "title": "Rain",
+            "uri": "https://meteoalarm.org?geocode=EMMA_ID:RS006"
+        },
+        {
+            "description": {
+                "en": "Local thunderstorms The risk of thunder stroke, endangered lives of people and animals, operation problems for all electrical devices, the risk of fire initiation, telecommunication problems. Possible problems in the transport of electricity. Possible occurrence of local intensive showers, torrents and strong gust. These phenomena could cause damage to the property and be dangerous to the security of people and animals.",
+                "sr": "Lokalna pojava grmljavina sa ili bez padavina Rizik od udara groma, opasnost za \u017eivot ljudi i \u017eivotinja, problemi u radu svih ure\u0111aja koji koriste elektri\u010dnu energiju, rizik od iniciranja pojave vatre, problemi u telekomunikacijama. Mogu\u0107i problemi u transportu elektri\u010dne energije zbog udara groma. Mogu\u0107a je lokalna pojava intezivnih pljuskova, bujica i jakih udara vetra sa \u0161tetama na pokretnoj i nepokretnoj imovini."
+            },
+            "effective_local": "2025-05-07T02:00:00",
+            "effective_utc": "2025-05-07T00:00:00",
+            "ends_local": "2025-05-08T01:59:00",
+            "ends_utc": "2025-05-07T23:59:00",
+            "expires_local": "2025-05-08T01:59:00",
+            "expires_utc": "2025-05-07T23:59:00",
+            "onset_local": "2025-05-07T02:00:00",
+            "onset_utc": "2025-05-07T00:00:00",
+            "regions": [
+                "\u0408\u0443\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430,RS"
+            ],
+            "severity": {
+                "en": "\ud83d\udfe8 Yellow",
+                "sr": "\ud83d\udfe8 Yellow"
+            },
+            "title": "Thunderstorms",
+            "uri": "https://meteoalarm.org?geocode=EMMA_ID:RS006"
+        },
+        {
+            "description": {
+                "en": "Heavy Rain/showers - at least 20 mm (l/m\u00b2)  within a 3-hour period Causing flooding, problems in all agricultural production activities, traffic problems, possible risk of landslides and mudslides. Indirect impact on the safety of people and animals.",
+                "sr": "Pljusak ki\u0161e ili jaka ki\u0161a sa koli\u010dinom padavina \u2265 20 l/m\u00b2 u periodu do 3h Izazivanje poplava, i prouzrokovanje \u0161teta u vezi sa poplavama, problemi u svim aktivnostima poljoprivredne proizvodnje, problemi u saobra\u0107aju, mogu\u0107a pojava odrona i klizi\u0161ta. Indirektni uticaj na bezbednost ljudi i \u017eivotinja."
+            },
+            "effective_local": "2025-05-06T02:00:00",
+            "effective_utc": "2025-05-06T00:00:00",
+            "ends_local": "2025-05-07T01:59:00",
+            "ends_utc": "2025-05-06T23:59:00",
+            "expires_local": "2025-05-07T01:59:00",
+            "expires_utc": "2025-05-06T23:59:00",
+            "onset_local": "2025-05-06T02:00:00",
+            "onset_utc": "2025-05-06T00:00:00",
+            "regions": [
+                "\u0408\u0443\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430,RS"
+            ],
+            "severity": {
+                "en": "\ud83d\udfe7 Orange",
+                "sr": "\ud83d\udfe7 Orange"
+            },
+            "title": "Rain",
+            "uri": "https://meteoalarm.org?geocode=EMMA_ID:RS006"
+        },
+        {
+            "description": {
+                "en": "Local thunderstorms with hail The risk of thunder stroke, endangered lives of people and animals, operation problems for all electrical devices, the risk of fire initiation and flash flooding, telecommunication problems, possible major damage to the property and in agriculture, especially in combination with strong wind and intensive rainfall.",
+                "sr": "Lokalna pojava grmljavine sa gradom Rizik od udara groma, opasnost po \u017eivot ljudi i \u017eivotinja, problemi u radu svih ure\u0111aja koja koriste elektri\u010dnu energiju, rizik od izazivanja po\u017eara, problemi u telekomunikacijama, mogu\u0107e ve\u0107e \u0161tete na pokretnoj i nepokretnoj imovini i u poljoprivredi, naro\u010dito u kombinaciji sa jakim vetrom i intezivnim pljuskovima."
+            },
+            "effective_local": "2025-05-06T02:00:00",
+            "effective_utc": "2025-05-06T00:00:00",
+            "ends_local": "2025-05-07T01:59:00",
+            "ends_utc": "2025-05-06T23:59:00",
+            "expires_local": "2025-05-07T01:59:00",
+            "expires_utc": "2025-05-06T23:59:00",
+            "onset_local": "2025-05-06T02:00:00",
+            "onset_utc": "2025-05-06T00:00:00",
+            "regions": [
+                "\u0408\u0443\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u043d\u0430 \u0421\u0440\u0431\u0438\u0458\u0430,RS"
+            ],
+            "severity": {
+                "en": "\ud83d\udfe7 Orange",
+                "sr": "\ud83d\udfe7 Orange"
+            },
+            "title": "Thunderstorms",
+            "uri": "https://meteoalarm.org?geocode=EMMA_ID:RS006"
+        }
+    ],
+    "city_name": "Ve\u017eanj",
+    "country_code": "RS",
+    "lat": 43.59,
+    "lon": 20.53,
+    "state_code": "00",
+    "timezone": "Europe/Belgrade"
+}
