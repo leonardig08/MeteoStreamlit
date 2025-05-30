@@ -60,7 +60,7 @@ with st.sidebar:
         spacing()
         st.session_state.smoothing = st.checkbox("Smoothing dati", value=True)
         spacing()
-        st.session_state.colorscheme = st.selectbox("Schema colori", options=colorschemes, format_func=lambda x:x[0], index = 6)[1]
+        st.session_state.colorscheme = st.selectbox("Schema colori", options=colorschemes, format_func=lambda x:x[0], index = 7)[1]
         spacing()
         st.button("Aggiorna dati", icon=":material/radar:", on_click=update_timestamps)
 st.sidebar.markdown("---")
