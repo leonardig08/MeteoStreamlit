@@ -40,7 +40,7 @@ setTimeout(function() {
 </script>
 """
 
-
+testscript = 'console.log("TEST")'
 
 
 
@@ -72,6 +72,6 @@ else:
     nav = st.navigation([homepage, page2])
 
     nav.run()
-
+    st.markdown(testscript, unsafe_allow_html=True)
     st.markdown(hide_components_script, unsafe_allow_html=True)
 
