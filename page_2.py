@@ -10,6 +10,13 @@ from streamlit_extras.floating_button import floating_button
 def spacing(px=20):
     st.markdown(f"<div style='margin-top: {px}px;'></div>", unsafe_allow_html=True)
 
+def returntotop():
+    html("""
+            <script>
+                var body = window.parent.document.querySelector(".main");
+                body.scrollTop = 0;
+            </script>
+            """)
 
 #region Gestione timestamp
 @st.cache_data(ttl=300)  # Cache per 5 minuti per non sovraccaricare l'API
@@ -37,14 +44,10 @@ def update_timestamps():
 def format_timestamp(timestamp_utc):
     local = datetime.datetime.fromtimestamp(timestamp_utc, tz=pytz.timezone(st.session_state["user_timezone"] if st.session_state["user_timezone"] else 'UTC'))
     return local.strftime("%Y-%m-%d %H:%M:%S")
+top = floating_button(":material/arrow_upward:")
+if top:
+    returntotop()
 
-if floating_button(":material/arrow_upward:"):
-    html("""
-        <script>
-            var body = window.parent.document.querySelector(".main");
-            body.scrollTop = 0;
-        </script>
-        """)
 
 st.markdown("## RADAR METEO\n"
             "---")
