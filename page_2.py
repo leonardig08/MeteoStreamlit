@@ -2,7 +2,10 @@ import streamlit as st
 import datetime
 import pytz
 import requests
+from streamlit.components.v1 import html
+
 from streamlit_radar_component import rainviewer_radar
+from streamlit_extras.floating_button import floating_button
 
 def spacing(px=20):
     st.markdown(f"<div style='margin-top: {px}px;'></div>", unsafe_allow_html=True)
@@ -34,6 +37,13 @@ def update_timestamps():
 def format_timestamp(timestamp_utc):
     local = datetime.datetime.fromtimestamp(timestamp_utc, tz=pytz.timezone(st.session_state["user_timezone"] if st.session_state["user_timezone"] else 'UTC'))
     return local.strftime("%Y-%m-%d %H:%M:%S")
+
+if floating_button(":material/arrow_upward:"):
+    html("""
+        <script>
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        </script>
+        """)
 
 st.markdown("## RADAR METEO\n"
             "---")
