@@ -8,9 +8,9 @@ hide_components_script = """
 <script>
 function hideElements() {
     console.log('CIOCIO')
-    const profile = document.querySelector('div[class^="_profileContainer_"]');                
+    const profile = document.querySelector('div');                
     const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');   
-    profile.style.display = "none";
+    console.log(profile)
 }
 
 setInterval(hideElements, 1000); // prova a nascondere ogni secondo
