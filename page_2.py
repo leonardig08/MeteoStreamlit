@@ -10,13 +10,24 @@ from streamlit_extras.floating_button import floating_button
 def spacing(px=20):
     st.markdown(f"<div style='margin-top: {px}px;'></div>", unsafe_allow_html=True)
 
-def returntotop():
-    html("""
-            <script>
-                var body = window.parent.document.querySelector(".main");
-                body.scrollTop = 0;
-            </script>
-            """)
+scroll_js = """
+<script>
+function getParameterByName(name) {
+    const url = new URL(window.location);
+    return url.searchParams.get(name);
+}
+
+window.onload = function() {
+    if (getParameterByName('scroll') === 'top') {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        // Rimuove il parametro scroll dalla URL
+        const url = new URL(window.location);
+        url.searchParams.delete('scroll');
+        window.history.replaceState(null, '', url);
+    }
+}
+</script>
+"""
 
 #region Gestione timestamp
 @st.cache_data(ttl=300)  # Cache per 5 minuti per non sovraccaricare l'API
@@ -46,7 +57,7 @@ def format_timestamp(timestamp_utc):
     return local.strftime("%Y-%m-%d %H:%M:%S")
 top = floating_button(":material/arrow_upward:")
 if top:
-    returntotop()
+    st.experimental_set_query_params(scroll="top")
 
 
 st.markdown("## RADAR METEO\n"
@@ -138,4 +149,4 @@ Mappa Fulmini
 spacing()
 st.markdown('<iframe src="https://map.blitzortung.org/index.php?interactive=1&NavigationControl=1&FullScreenControl=1&Cookies=0&InfoDiv=1&MenuButtonDiv=1&ScaleControl=1&LinksCheckboxChecked=0&LinksRangeValue=10&MapStyle=0&MapStyleRangeValue=4&LightningRangeValue=2&Advertisment=0#6/46/10" width="100%" height="800"></iframe>', unsafe_allow_html=True )
 
-
+html(scroll_js)
