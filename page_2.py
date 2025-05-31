@@ -48,9 +48,9 @@ def update_timestamps():
 def format_timestamp(timestamp_utc):
     local = datetime.datetime.fromtimestamp(timestamp_utc, tz=pytz.timezone(st.session_state["user_timezone"] if st.session_state["user_timezone"] else 'UTC'))
     return local.strftime("%Y-%m-%d %H:%M:%S")
-top = floating_button(":material/arrow_upward:")
-if top:
-    st.experimental_set_query_params(scroll="top")
+
+top = floating_button(":material/arrow_upward:", on_click=scroll)
+
 
 
 st.markdown("## RADAR METEO\n"
