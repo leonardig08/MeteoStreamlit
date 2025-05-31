@@ -4,15 +4,15 @@ import requests
 import streamlit.components.v1 as components
 
 
-hide_components_script = """
-<script>
-function hideElements() {
-    console.log(document.documentElement.outerHTML);
-
+hide_css = """
+<style>
+div[class^="_profileContainer_"] {
+    display: none !important;
 }
-
-setInterval(hideElements, 1000); // prova a nascondere ogni secondo
-</script>
+a[class*="_viewerBadge_"] {
+    display: none !important;
+}
+</style>
 """
 
 
@@ -49,5 +49,6 @@ else:
     nav = st.navigation([homepage, page2])
 
     nav.run()
-    st.markdown(hide_components_script, unsafe_allow_html=True)
+    st.markdown(hide_css, unsafe_allow_html=True)
+    components.html(hide_css)
 
