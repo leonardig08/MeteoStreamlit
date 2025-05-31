@@ -3,19 +3,35 @@ import pytz
 import requests
 
 
-hide_elements = """
-    <style>
-        /* Nasconde il profilo utente */
-        div[class*="_profileContainer_"] {
-            display: none !important;
+hide_components_script = """
+    <script>
+    window.addEventListener('load', function() {
+        // Nasconde il profilo autore
+        const profile = document.querySelector('div[class^="_profileContainer_"]');
+        if (profile) {
+            profile.style.display = "none";
         }
 
-        /* Nasconde il badge Streamlit */
-        a[class*="_viewerBadge_"] {
-            display: none !important;
+        // Nasconde il badge streamlit cloud
+        const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
+        if (badge) {
+            badge.style.display = "none";
         }
-    </style>
+    });
+
+    // Ritenta se i componenti non sono caricati subito
+    const interval = setInterval(() => {
+        const profile = document.querySelector('div[class^="_profileContainer_"]');
+        const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
+        if (profile) profile.style.display = 'none';
+        if (badge) badge.style.display = 'none';
+        if (profile && badge) clearInterval(interval);
+    }, 500);
+    </script>
 """
+
+
+
 
 
 def is_connected():
@@ -46,5 +62,5 @@ else:
 
     nav.run()
 
-    st.markdown(hide_elements, unsafe_allow_html=True)
+    st.markdown(hide_components_script, unsafe_allow_html=True)
 
