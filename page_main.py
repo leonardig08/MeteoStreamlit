@@ -264,7 +264,7 @@ with st.container(border=True):
     with btt2:
         st.button("Ricarica allerte meteo", "reloadalerts", None, download_alerts, disabled=not st.session_state.city)
 
-st.markdown(f"---\n{"" if st.session_state.city else 'Seleziona una città per avere grafici e allerte'} ")
+st.markdown(f"---\n{'' if st.session_state.city else 'Seleziona una città per avere grafici e allerte'}")
 
 
 
@@ -329,12 +329,14 @@ if st.session_state.hourly is not None and st.session_state.daily is not None an
 if st.session_state.city is not None:
     alertextend = st.expander("Allerte Meteo")
     with alertextend:
-
-        st.session_state.alerts = st.session_state.alertapi.get_alerts(st.session_state.city[1], st.session_state.city[0])
-        st.session_state.weatheralertlanguage = st.selectbox("Lingua allerte", st.session_state.alerts["alerts"][0]["description"].keys())
-        #st.markdown(st.session_state.alerts)
-        for alert in st.session_state.alerts["alerts"]:
-            st_weather_alert(alert)
+        try:
+            st.session_state.alerts = st.session_state.alertapi.get_alerts(st.session_state.city[1], st.session_state.city[0])
+            st.session_state.weatheralertlanguage = st.selectbox("Lingua allerte", st.session_state.alerts["alerts"][0]["description"].keys())
+            #st.markdown(st.session_state.alerts)
+            for alert in st.session_state.alerts["alerts"]:
+                st_weather_alert(alert)
+        except KeyError:
+            st.markdown("Allerte non disponibili, riprova più tardi")
 
 extendcharts = st.expander("Chart meteo")
 
@@ -347,11 +349,9 @@ with extendcharts:
     if st.session_state.selectedProduct:
         axislist = st.session_state.chartapi.get_axis_list(st.session_state.selectedProduct["name"])
         axisnames = [axis[0] for axis in axislist]
-        #print(axisnames)
         titleconversion = {axis[0]: axis[1] for axis in axislist}
         remainingaxis = axisnames.copy()
         values = {}
-        print(axisnames)
         if "area" in axisnames or "projection" in axisnames:
             availableareas = st.session_state.chartapi.get_available_area(st.session_state.selectedProduct["name"])
             selectedarea = st.selectbox("Area proiezione", [(area["label"], area["value"]) for area in availableareas],
@@ -363,7 +363,7 @@ with extendcharts:
             elif "projection" in axisnames:
                 remainingaxis.remove("projection")
                 values["projection"] = selectedarea[1]
-            else:print("ERRORE ", axisnames)
+            else:print("ERRORE ")
 
         if "base_time" in axisnames:
             availablebasetimes = st.session_state.chartapi.get_available_base_times(st.session_state.selectedProduct["name"])
@@ -398,13 +398,10 @@ with extendcharts:
                 #st.markdown(values[axis])
 
         canrequest = False
-        #print((list(values.keys()).remove("valid_time") if "valid_time" in list(values.keys()) else list(values.keys())), axisnames)
         keys = list(values.keys())
         if "valid_time" in keys:
             keys.remove("valid_time")
 
-        #set((list(values.keys()).remove("valid_time") if "valid_time" in list(values.keys()) else list(values.keys())))
-        print(set(keys), set(axisnames))
         axischeck = axisnames.copy()
         if "location" in axischeck:
             axischeck.remove("location")

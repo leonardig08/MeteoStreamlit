@@ -46,12 +46,13 @@ class AlertAPI:
     def __init__(self):
         self.url = "https://api.weatherbit.io/v2.0/"
         self.key = st.secrets["alert_key"]
+        print(self.key)
 
     def get_alerts(self, lat, lon):
         urlformat = self.url + "alerts/?" + urlencode({"lat": lat, "lon": lon, "key": self.key})
         response = requests.get(urlformat)
         jsonresponse = response.json()
-
+        print(jsonresponse)
         alerts = jsonresponse["alerts"]
         for alert in alerts:
             alert["description"] = separa_testi_per_lingua(alert["description"])
