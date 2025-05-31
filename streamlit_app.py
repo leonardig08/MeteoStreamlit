@@ -6,26 +6,41 @@ import requests
 hide_components_script = """
     <script>
     window.addEventListener('load', function() {
-        // Nasconde il profilo autore
         const profile = document.querySelector('div[class^="_profileContainer_"]');
         if (profile) {
+            console.log("✅ Profilo autore trovato e nascosto (on load).");
             profile.style.display = "none";
+        } else {
+            console.log("⚠️ Profilo autore non trovato al primo tentativo.");
         }
 
-        // Nasconde il badge streamlit cloud
         const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
         if (badge) {
+            console.log("✅ Badge Streamlit trovato e nascosto (on load).");
             badge.style.display = "none";
+        } else {
+            console.log("⚠️ Badge Streamlit non trovato al primo tentativo.");
         }
     });
 
-    // Ritenta se i componenti non sono caricati subito
     const interval = setInterval(() => {
         const profile = document.querySelector('div[class^="_profileContainer_"]');
         const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
-        if (profile) profile.style.display = 'none';
-        if (badge) badge.style.display = 'none';
-        if (profile && badge) clearInterval(interval);
+
+        if (profile && profile.style.display !== "none") {
+            profile.style.display = 'none';
+            console.log("✅ Profilo autore nascosto (interval).");
+        }
+
+        if (badge && badge.style.display !== "none") {
+            badge.style.display = 'none';
+            console.log("✅ Badge Streamlit nascosto (interval).");
+        }
+
+        if (profile && badge) {
+            console.log("✅ Tutti gli elementi nascosti. Intervallo fermato.");
+            clearInterval(interval);
+        }
     }, 500);
     </script>
 """
