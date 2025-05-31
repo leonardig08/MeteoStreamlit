@@ -41,7 +41,7 @@ setTimeout(function() {
 </script>
 """
 
-testscript = 'console.log("TEST")'
+testscript = '<script>console.log("TEST")</script>'
 
 
 
