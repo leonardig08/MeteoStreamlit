@@ -7,16 +7,7 @@ import streamlit.components.v1 as components
 hide_components_script = """
 <script>
 function hideElements() {
-    const profile = document.querySelector('div[class^="_profileContainer_"]');
-    const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
-    if (profile) {
-        profile.style.display = "none";
-        console.log("Profilo nascosto");
-    }
-    if (badge) {
-        badge.style.display = "none";
-        console.log("Badge nascosto");
-    }
+    console.log('CIOCIO')
 }
 
 setInterval(hideElements, 1000); // prova a nascondere ogni secondo
