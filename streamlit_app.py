@@ -31,7 +31,7 @@ if not is_connected():
 else:
     st.set_page_config(layout="wide")
 
-    st.markdown(hide_elements, unsafe_allow_html=True)
+
 
     with st.sidebar:
         st.session_state["user_timezone"] = st.selectbox("Seleziona fuso orario", pytz.common_timezones,
@@ -45,4 +45,6 @@ else:
     nav = st.navigation([homepage, page2])
 
     nav.run()
+
+    st.markdown(hide_elements, unsafe_allow_html=True)
 
