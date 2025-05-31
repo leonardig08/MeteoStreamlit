@@ -41,7 +41,8 @@ def format_timestamp(timestamp_utc):
 if floating_button(":material/arrow_upward:"):
     html("""
         <script>
-        window.scrollTo({top: 0, behavior: 'smooth'});
+            var body = window.parent.document.querySelector(".main");
+            body.scrollTop = 0;
         </script>
         """)
 
