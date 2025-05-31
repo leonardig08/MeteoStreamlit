@@ -6,40 +6,24 @@ import streamlit.components.v1 as components
 
 hide_components_script = """
 <script>
-setTimeout(function() {
-    // Nasconde il profilo autore
+function hideElements() {
     const profile = document.querySelector('div[class^="_profileContainer_"]');
+    const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
     if (profile) {
         profile.style.display = "none";
         console.log("Profilo nascosto");
     }
-
-    // Nasconde il badge streamlit cloud
-    const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
     if (badge) {
         badge.style.display = "none";
         console.log("Badge nascosto");
     }
+}
 
-    // Intervallo per retry
-    const interval = setInterval(() => {
-        const profile = document.querySelector('div[class^="_profileContainer_"]');
-        const badge = document.querySelector('a[class^="_container_"][class*="_viewerBadge_"]');
-        if (profile) {
-            profile.style.display = "none";
-            console.log("Retry: profilo nascosto");
-        }
-        if (badge) {
-            badge.style.display = "none";
-            console.log("Retry: badge nascosto");
-        }
-        if (profile && badge) {
-            clearInterval(interval);
-        }
-    }, 500);
-}, 5000); // Delay iniziale di 3 secondi
+setInterval(hideElements, 1000); // prova a nascondere ogni secondo
 </script>
 """
+
+
 
 testscript = '<script>console.log("TEST")</script>'
 
@@ -74,5 +58,5 @@ else:
 
     nav.run()
     components.html(testscript)
-    components.html(hide_components_script)
+    components.html(hide_components_script, height=0)
 
