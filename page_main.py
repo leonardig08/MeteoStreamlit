@@ -409,7 +409,7 @@ with extendcharts:
             axischeck.append("lon")
         if set(keys) == set(axischeck):
             canrequest = True
-            st.session_state.imgcaption = f"{st.session_state.selectedProduct["title"]}"
+            st.session_state.imgcaption = f"{st.session_state.selectedProduct['title']}"
         clm1, clm2 = st.columns(2)
         with clm1:
             st.button("Richiedi Chart", on_click=get_chart, disabled=not canrequest, args=(st.session_state.selectedProduct["name"], values))

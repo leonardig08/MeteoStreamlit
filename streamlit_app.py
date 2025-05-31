@@ -1,6 +1,7 @@
 import streamlit as st
 import pytz
 import requests
+import streamlit.components.v1 as components
 
 
 hide_components_script = """
@@ -72,6 +73,6 @@ else:
     nav = st.navigation([homepage, page2])
 
     nav.run()
-    st.markdown(testscript, unsafe_allow_html=True)
-    st.markdown(hide_components_script, unsafe_allow_html=True)
+    components.html(testscript)
+    components.html(hide_components_script)
 
