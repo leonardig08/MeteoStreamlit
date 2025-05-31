@@ -11,26 +11,40 @@ function hideProfile() {
     if (profile && profile.style.display !== "none") {
         profile.style.display = "none";
         console.log("Profilo nascosto");
+        return true;
     }
+    return false;
+}
+
+function hideStreamlitLinks() {
+    let hiddenAny = false;
+    if (window.top && window.top.document) {
+        window.top.document.querySelectorAll(`[href*="streamlit.io"]`).forEach(e => {
+            if (e.style.display !== "none") {
+                e.style.display = "none";
+                console.log("Link streamlit.io nascosto (top window)");
+                hiddenAny = true;
+            }
+        });
+    }
+    return hiddenAny;
 }
 
 const interval = setInterval(() => {
     try {
-        hideProfile();
+        const profileHidden = hideProfile();
+        const linksHidden = hideStreamlitLinks();
 
-        if (window.top && window.top.document) {
-            window.top.document.querySelectorAll(`[href*="streamlit.io"]`).forEach(e => {
-                if (e.style.display !== "none") {
-                    e.style.display = "none";
-                    console.log("Link streamlit.io nascosto (top window)");
-                }
-            });
+        // Se profilo e link sono nascosti o non esistono più, stoppa il ciclo
+        if (profileHidden && !linksHidden) {
+            clearInterval(interval);
+            console.log("Tutti nascosti, stop interval");
         }
     } catch(e) {
         console.warn("Errore accesso window.top.document:", e);
-        clearInterval(interval); // stop se non ha accesso per non spam
+        clearInterval(interval);
     }
-}, 1000);
+}, 500);
 </script>
 """
 
