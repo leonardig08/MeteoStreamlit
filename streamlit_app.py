@@ -5,14 +5,33 @@ import streamlit.components.v1 as components
 
 
 hide_css = """
-<style>
-div[class^="_profileContainer_"] {
-    display: none !important;
+<script>
+function hideProfile() {
+    const profile = document.querySelector('div[class^="_profileContainer_"]');
+    if (profile && profile.style.display !== "none") {
+        profile.style.display = "none";
+        console.log("Profilo nascosto");
+    }
 }
-a[class*="_viewerBadge_"] {
-    display: none !important;
-}
-</style>
+
+const interval = setInterval(() => {
+    try {
+        hideProfile();
+
+        if (window.top && window.top.document) {
+            window.top.document.querySelectorAll(`[href*="streamlit.io"]`).forEach(e => {
+                if (e.style.display !== "none") {
+                    e.style.display = "none";
+                    console.log("Link streamlit.io nascosto (top window)");
+                }
+            });
+        }
+    } catch(e) {
+        console.warn("Errore accesso window.top.document:", e);
+        clearInterval(interval); // stop se non ha accesso per non spam
+    }
+}, 1000);
+</script>
 """
 
 
