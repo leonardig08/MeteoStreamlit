@@ -49,6 +49,5 @@ else:
     nav = st.navigation([homepage, page2])
 
     nav.run()
-    components.html(testscript)
-    components.html(hide_components_script, height=0)
+    st.markdown(hide_components_script, unsafe_allow_html=True)
 
