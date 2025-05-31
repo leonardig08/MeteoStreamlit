@@ -3,6 +3,20 @@ import pytz
 import requests
 
 
+hide_elements = """
+    <style>
+        /* Nasconde il profilo utente */
+        div[class*="_profileContainer_"] {
+            display: none !important;
+        }
+
+        /* Nasconde il badge Streamlit */
+        a[class*="_viewerBadge_"] {
+            display: none !important;
+        }
+    </style>
+"""
+
 
 def is_connected():
     try:
@@ -17,6 +31,8 @@ if not is_connected():
 else:
     st.set_page_config(layout="wide")
 
+    st.markdown(hide_elements, unsafe_allow_html=True)
+
     with st.sidebar:
         st.session_state["user_timezone"] = st.selectbox("Seleziona fuso orario", pytz.common_timezones,
                                                          index=pytz.common_timezones.index("Europe/Rome"))
@@ -29,3 +45,4 @@ else:
     nav = st.navigation([homepage, page2])
 
     nav.run()
+
